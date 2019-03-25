@@ -13,6 +13,11 @@ if (list.get(0).equals("a")) {
 	System.out.println("Not funny");
 }
 ```
+```text
+
+
+
+```
 
 2. What is the output of the following code?
 ```java
@@ -27,6 +32,11 @@ if (pt2 == pt1) {
 	System.out.println("Different object");
 }
 ```
+```text
+
+
+
+```
 
 3. What is the error of the following code?
 ```java
@@ -34,6 +44,11 @@ ArrayList list = new ArrayList();
 list.add('a');
 list.add(0, 34);
 String c1 = (String) list.get(1);
+```
+```text
+
+
+
 ```
 
 ## Exercise Two: An Array of Strings
@@ -44,16 +59,16 @@ String[] array = {"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN"};
 Given the array of strings above, convert the array of strings to an **ArrayList**. 
 
 Then, write methods that make each string in the array list all lowercase. Implement the method in three different ways:
-    * Using a loop over the index values
-    * Using an enhanced for loop
-    * Using an iterator
+* Using a loop over the index values
+* Using an enhanced for loop
+* Using an iterator
 
 
 ## Exercise Three: Arrays to Lists
 Examine the code in the `ex03` package. The **ExerciseThree_Arrays** class contains a complete program which has three methods:
-    * **union** – takes two arrays and returns an array containing all elements in the first array plus all elements in the second array.
-    * **intersection** – takes two arrays and returns an array containing all elements in the first array which are also in the second array.
-    * **difference** – takes two arrays and returns an array containing all elements in the first array which are not in the second array.
+* **union** – takes two arrays and returns an array containing all elements in the first array plus all elements in the second array.
+* **intersection** – takes two arrays and returns an array containing all elements in the first array which are also in the second array.
+* **difference** – takes two arrays and returns an array containing all elements in the first array which are not in the second array.
 
 The class also contains a start method which creates some test arrays and runs them through each of these methods for testing purposes, and prints out the result.
 As you can see from the implementations of some of those methods, arrays perhaps aren’t the most ideal data structures for doing this kind of thing! In two of the methods we even have to loop twice – once just to figure out how big the result array should be.
@@ -85,11 +100,10 @@ Further details about what the method should do can be seen in the provided comm
 
 ## Bonus Exercise One: A Predicate interface
 Take a look at the code that’s located in the ex01 package. You’ll find the following classes & interfaces there to begin with:
-    * **IPredicate** – an interface with a single method, which takes an Object and returns a boolean based on whether some condition (i.e. predicate) about that object is true or false.
-    * **OddNumbersPredicate** – an **IPredicate** implementation which checks if objects are odd Integers.
-    * **UpperCaseStringPredicate** – an **IPredicate** implementation which checks if objects are Strings completely in upper-case.
-    * **ExerciseOne** – the main class for this exercise. Contains a method called **filterList**, which takes a List of **Objects** and an **IPredicate**, and removes objects from the list which don’t match the predicate. Also contains a start method which creates a couple of lists and attempts to filter them using relevant predicates.
-
+* **IPredicate** – an interface with a single method, which takes an Object and returns a boolean based on whether some condition (i.e. predicate) about that object is true or false.
+* **OddNumbersPredicate** – an **IPredicate** implementation which checks if objects are odd Integers.
+* **UpperCaseStringPredicate** – an **IPredicate** implementation which checks if objects are Strings completely in upper-case.
+* **ExerciseOne** – the main class for this exercise. Contains a method called **filterList**, which takes a List of **Objects** and an **IPredicate**, and removes objects from the list which don’t match the predicate. Also contains a start method which creates a couple of lists and attempts to filter them using relevant predicates.
 
 If you run the program as-is, you’ll notice that it crashes. This is because, the way we’ve written the program, the compiler is happily allowing us to put incorrect types of items into lists, and supply incorrect predicates to the **filterList** method. There are examples of both of these problems in the start method.
 
@@ -122,7 +136,7 @@ Modify the declarations of these two variables to ensure that this happens.
 ### Step 5: Make the filterList method generic
 We want to ensure that, if we pass a **List<Integer>** into the **filterList** method, for example, we can only pass an **IPredicate<Integer>**, not any other kind of **IPredicate**. We can do this by turning **filterList** into a `generic method`.
 
-We didn’t cover generic methods in the lecture, but they are way to make a single method generic, without making an entire class generic. For more information about generic methods and to see their syntax, have a look at the material covered in ![this Java tutorial page](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html).
+We didn’t cover generic methods in the lecture, but they are way to make a single method generic, without making an entire class generic. For more information about generic methods and to see their syntax, have a look at the material covered in [this Java tutorial page](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html).
 
 Once you’re familiar with the syntax for generic methods, add a type parameter (e.g. <T>) to the **filterList** method, and change the **list** and **predicate** arguments to only accept lists and predicates of the matching type parameter. You’ll also need to modify a couple of lines of code within the method itself to refer to your type parameter rather than **Object**.
 
@@ -133,14 +147,12 @@ This is now a lot more preferable – it’s almost always better to have things
 
 ## Bonus Exercise Two: Lots of Shapes
 Examine the code in the `ex02` package. You’ll see the following classes:
-    * **Shape** – Represents some kind of shape. Shapes have, among other things:
-        * An area which can be obtained with the `getArea()` method
-        * A perimeter which can be obtained with the `getPerimeter()` method
-        * Information which can be obtained using the `toString()` method
-        
-    * **Circle, Rectangle & RegularPolygon** – Types of Shape.
-    * **ShapeBox** – A box designed to hold many shapes. Has methods to add a single shape, add many shapes at once, get the total perimeter of all shapes in the box, get the total area of all shapes in the box, and get information regarding the box and all shapes inside.
-    * **ExeriseTwo** – the main program entry point. The **start** method creates a **ShapeBox** and adds some individual shapes to it. It also creates lists of **Circles**, **Rectangles**, and **RegularPolygons** and attempts to add those to the box.
+1. **Shape** – Represents some kind of shape. Shapes have, among other things:
+    * An area which can be obtained with the `getArea()` method
+    * A perimeter which can be obtained with the `getPerimeter()` method
+    * Information which can be obtained using the `toString()` method
+2. **Circle, Rectangle & RegularPolygon** – Types of Shape.
+3. **ShapeBox** – A box designed to hold many shapes. Has methods to add a single shape, add many shapes at once, get the total perimeter of all shapes in the box, get the total area of all shapes in the box, and get information regarding the box and all shapes inside. * **ExeriseTwo** – the main program entry point. The **start** method creates a **ShapeBox** and adds some individual shapes to it. It also creates lists of **Circles**, **Rectangles**, and **RegularPolygons** and attempts to add those to the box.
 
 The program as it stands is incomplete. There are several methods which aren’t complete and some commented lines which should be uncommented, but won’t currently work with the rest of the program.
 
