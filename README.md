@@ -119,7 +119,7 @@ Once we’ve made these changes, the program should run correctly and produce th
 ### Step 2: Make IPredicate generic
 If we look at the **IPredicate** interface, we’ll see that the test method can accept any kind of **Object**. This is error-prone as it forces any implementing class to deal with any kind of input, and if they forget, errors may occur.
 
-For this step, change **IPredicate** into a `generic interface`. Add a type parameter (e.g. <T> ) to the interface declaration, and modify the **test** method signature accordingly.
+For this step, change **IPredicate** into a `generic interface`. Add a type parameter (e.g. **<** **T** **>** ) to the interface declaration, and modify the **test** method signature accordingly.
 
 ### Step 3: Modify OddNumbersPredicate and UpperCaseStringPredicate
 Now that we’ve changed the IPredicate interface, we need to modify any classes which implement it accordingly. In this case, that’s **OddNumbersPredicate** and **UpperCaseStringPredicate**.
@@ -138,7 +138,7 @@ We want to ensure that, if we pass a **List<Integer>** into the **filterList** m
 
 We didn’t cover generic methods in the lecture, but they are way to make a single method generic, without making an entire class generic. For more information about generic methods and to see their syntax, have a look at the material covered in [this Java tutorial page](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html).
 
-Once you’re familiar with the syntax for generic methods, add a type parameter (e.g. <T>) to the **filterList** method, and change the **list** and **predicate** arguments to only accept lists and predicates of the matching type parameter. You’ll also need to modify a couple of lines of code within the method itself to refer to your type parameter rather than **Object**.
+Once you’re familiar with the syntax for generic methods, add a type parameter (e.g. **<** **T** **>** ) to the **filterList** method, and change the **list** and **predicate** arguments to only accept lists and predicates of the matching type parameter. You’ll also need to modify a couple of lines of code within the method itself to refer to your type parameter rather than **Object**.
 
 ### Step 6: See that your program is less error-prone!
 Uncomment the lines you commented out in step 1. You’ll see that the program won’t compile. Similarly, if you re-introduce the error you fixed in step 1, the program will also not compile.
@@ -168,7 +168,8 @@ Complete **ShapeBox’s getTotalPerimeter()** method, which should add up the pe
 
 ### Step 3: Calculating the total area
 Complete **ShapeBox’s getTotalArea()** method, which should add up the area of all shapes in the **storage** list and return the sum. For this method, use an *enhanced for-loop*.
-Step 4: Complete ShapeBox’s toString() method
+
+### Step 4: Complete ShapeBox’s toString() method
 Complete the **toString()** method so that it loops through all shapes in the **storage** list and concatenates information about each shape to the given info string. Information about a shape can be obtained using its own **toString()** method. For this question, you should iterate through the list using an **Iterator**.
 
 
