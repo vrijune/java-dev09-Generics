@@ -2,13 +2,14 @@ package ictgradschool.industry.collections.ex03;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class ExerciseThree_Lists {
 
     /**
      * Tests the union, intersection, and difference methods using some dummy data.
-     *
+     * <p>
      * You shouldn't need to edit this class, other than to uncomment two lines once you've implemented those methods.
      */
     private void start() {
@@ -26,11 +27,11 @@ public class ExerciseThree_Lists {
 
         // Should print [A]
         // TODO Uncomment this line once you've completed the intersection method
-        // System.out.println(Arrays.toString(intersection(testList1, testList2).toArray()));
+        System.out.println(Arrays.toString(intersection(testList1, testList2).toArray()));
 
         // Should print [B, C]
         // TODO Uncomment this line once you've completed the difference method
-        // System.out.println(Arrays.toString(difference(testList1, testList2).toArray()));
+         System.out.println(Arrays.toString(difference(testList1, testList2).toArray()));
 
     }
 
@@ -46,24 +47,50 @@ public class ExerciseThree_Lists {
 
         List<String> result = new ArrayList<>();
 
+
         // TODO Add all items from list1 and list2 to the result
+        for (String element : list1) {
+            result.add(element);
+        }
 
+        for (String element : list2) {
+            result.add(element);
+        }
         return result;
-
     }
 
+
     // TODO Write an intersection method
+    private List<String> intersection(List<String> list1, List<String> list2) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < list1.size(); i++) {
+                if (list1.get(i).equals(list2.get(i))) {
+                result.add(list1.get(i));
+            }
+        }
+             return result;
+    }
+
+
 
 
     // TODO Write a difference method
-
-
-    /**
-     * Program entry point. Do not edit.
-     */
-
-    public static void main(String[] args) {
-        new ExerciseThree_Lists().start();
+    private List<String> difference(List<String> list1, List<String> list2) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < list1.size(); i++) {
+          if(!list1.get(i).equals(list2.get(i))){
+              result.add(list1.get(i));
+            }
+        }return result;
     }
+//    }
+        /**
+         * Program entry point. Do not edit.
+         */
 
-}
+            public static void main (String[]args){
+                new ExerciseThree_Lists().start();
+            }
+
+        }
+

@@ -99,6 +99,8 @@ public class ExerciseThree_Arrays {
             }
         }
 
+
+
         String[] result = new String[numValues];
         int counter = 0;
         for (int i = 0; i < arr1.length; i++) {

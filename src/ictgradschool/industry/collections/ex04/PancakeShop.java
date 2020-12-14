@@ -32,8 +32,13 @@ public class PancakeShop {
             Customer customer;
             // TODO modify this line to get the first customer in line. You should use a "poll" method, which will
             // TODO return null if there are no more customers left.
+
+          ;
+
+
+
             // HINT: Remember, queues are FIFO.
-            while ((customer = null) != null) {
+            while ((customer =  customerQueue.pollLast()) != null) {
 
                 System.out.println(customer.getName() + " sat at the table. They want to eat "
                         + customer.getBellySize() + " pancakes for lunch!");
@@ -71,6 +76,8 @@ public class PancakeShop {
             Pancake p = new Pancake(i);
 
             // TODO Add the pancake to the top of the stack.
+
+            pancakes.addFirst(p);
             // HINT: Stacks are Last-In-First-Out (LIFO)
 
         }
