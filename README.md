@@ -1,4 +1,5 @@
 Industry Lab 09: Generics & Collections
+
 ==========
 ## Exercise One: Simple Generic Collections
 1. What is the output of the following code?
